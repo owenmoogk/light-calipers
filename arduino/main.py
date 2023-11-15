@@ -38,9 +38,10 @@ def main():
 		print("Incoming Data: " + data, end='')
 							
 		screen.fill((255, 255, 255))
-
+		data_value = data_value/1024.0*5*(-4.5844)+22.226
+		data_value = math.floor(data_value * 1000) / 1000.0
 		# Render the moving average number to the screen
-		text = font.render(f"Measurement: {math.floor(data_value)}", True, (0, 0, 0))
+		text = font.render(f"{data_value} +/- 1.05 [cm]", True, (0, 0, 0))
 		screen.blit(text, (50, 50))
 
 		# Update the display
